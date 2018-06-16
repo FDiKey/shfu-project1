@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/AppTheme"
-    tools:context="com.examplex.kirill.project1.MainActivity">
+    tools:context="com.examplex.kirill.project1.HomeActivity"
+    android:theme="@style/AppTheme">
 
     <TextView
         android:layout_width="wrap_content"
