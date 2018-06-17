@@ -11,7 +11,7 @@ import android.widget.ListView;
 public class HomeActivity extends AppCompatActivity {
 
     private ListView list;
-    private String[] temp = {"Zero Cool",
+    private String[] temp = {"zero cool",
             "Cereal Killer",
             "Lord Nikon",
             "Phantom Phreak",
