@@ -12,7 +12,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private ListView list;
     private String[] temp = {"zero cool",
-            "Cereal Killer",
+            "Cereal  Killer",
             "Lord Nikon",
             "Phantom Phreak",
             "Razor",
