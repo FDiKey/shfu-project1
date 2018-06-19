@@ -35,7 +35,6 @@ public class ItemActivity extends AppCompatActivity implements View.OnClickListe
         switch(v.getId())
         {
             case R.id.item_back:{
-                //Intent intent = new Intent( ItemActivity.this, HomeActivity.class);
                 this.finish();
                 break;
             }
