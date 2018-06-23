@@ -1,5 +1,6 @@
 package com.examplex.kirill.project1;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -14,10 +15,16 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import com.examplex.kirill.project1.adapters.MyRecyclerAdapter;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,8 +35,9 @@ public class HomeActivity extends AppCompatActivity {
     public RecyclerView rv;
     private Paint p = new Paint();
     ItemTouchHelper itemTouchHelper;
-    MyRecyclerAdapter adpter;
+    public MyRecyclerAdapter adpter;
     ItemTouchHelper.SimpleCallback simpleItemTouchCallback;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,7 +112,36 @@ public class HomeActivity extends AppCompatActivity {
                                 .withIdentifier(3)
 
                         )
+                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id, IDrawerItem drawerItem) {
+                        switch(drawerItem.getIdentifier())
+                        {
+                            case 1:{
+
+                                break;
+                            }
+                            case 2:{
+                                intent = new Intent(HomeActivity.this, EditItem.class);
+                                startActivityForResult(intent,1);
+
+                                break;
+                            }
+                            case 3:{
+
+                                break;
+                            }
+                        }
+                    }
+                })
                 .build();
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (data == null) {return;}
+        String name = data.getStringExtra("res_name");
+        list1.add(new Hacker(name, R.drawable.crash));
+        adpter.notifyDataSetChanged();
     }
 
 
